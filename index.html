@@ -4,12 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+  #board {
+    position: relative;
+    z-index: 1;
+    background-image:  url("29a5351a4fb6c6d4b43af271270431c6.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-width: 1600px;
+    min-height: 1000px;
+  }
+
+  .player{
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+  }
+  .player {
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    width: 80px;
+    height: 80px;
+  }
+  .player {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+  }
+  .player {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    width: 80px;
+    height: 80px;
+  }
+  
+  </style>
+
+
 </head>
 <body>
-  <img src= "29a5351a4fb6c6d4b43af271270431c6.jpg" alt="CandyLand" width="1600" height="1000">
-  <img src= "Red player.jpg" alt= "Red Player">
-  <img src= "Orange player.jpg" alt= "Orange player">
-  <img src= "Blue player.jpg" alt= "Blue player">
-  <img src= "Purple player.jpg" alt= "Purple player">
+  <div id="board">
+     <img src= "Red-player.png" alt= "Red Player" id="red" class="player">
+      <img src= "Orange-player.png" alt= "Orange player" id="orange" class="player">
+      <img src= "Blue-player.png" alt= "Blue player" id="blue" class="player"> -->
+      <img src= "Purple-player.png" alt= "Purple player" id="purple" class="player">
+  </div>
+
+  <!-- <img src= "29a5351a4fb6c6d4b43af271270431c6.jpg" alt="CandyLand" width="1600" height="1000"> -->
+  
+
 </body>
 </html>
+
