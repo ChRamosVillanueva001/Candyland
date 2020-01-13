@@ -71,6 +71,95 @@ div.flex {
   display: flex;
   flex-direction: row;
 }
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(0, 247, 255);
+}
+
+#wrapper {
+  margin: auto;  
+  position: relative;
+  text-align: center;
+}
+
+button{
+    position: relative;
+    top: 100px;
+    width: 200px;
+    height: 50px;
+    border-style: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #FCBDDB;
+    box-shadow: 0 5px 0 #FAACD1;
+}
+
+div#dice{
+    margin: 0 auto;
+    margin-top: 200px;
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 7%;
+}
+
+.center {
+    text-align: center;
+}
+
+#one {
+    text-align: center;
+    position: relative;
+    top: 20%;
+    font-size: 10rem;
+    color: #574F53;
+}
+
+#two, #three {
+    text-align: center;
+    position: relative;
+    top: 20%;
+    font-size: 10rem;
+    transform: rotate(45deg);
+    color: #574F53;
+}
+
+#four {
+    text-align: center;
+    position: relative;
+    top: 5%;
+    font-size: 10rem;
+    line-height: 80%;
+    color: #574F53;
+}
+
+#five{
+    text-align: center;
+    position: relative;
+    top: 15%;
+    font-size: 10rem;
+    color: #574F53;
+    line-height: 45%;
+}
+
+#six {
+    text-align: center;
+    position: relative;
+    top: 10%;
+    font-size: 10rem;
+    color: #574F53;
+    line-height: 50%;
+}
 
 
   </style>
@@ -90,19 +179,39 @@ div.flex {
     <p id="placeholder">
     
     </p>
-    <button id="button">Roll Dice</button>
+    <button id="button">Pick A Card</button>
     </div>
   </div>
   <!-- <script src="dice.js"></script>
   <script src="ui.js"></script> -->
   <!-- <img src= "29a5351a4fb6c6d4b43af271270431c6.jpg" alt="CandyLand" width="1600" height="1000"> -->
-  
 
+</body>
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/script.js"></script>
+  <title>Dice</title>
+</head>
+<body>
+<div id="wrapper">
+  <button type="button" name="button" id="button" onclick="rollDice()">ROLL DICE</button>
+  <div id="dice">
+      <p id="four">&bull;&nbsp; &bull;</p>
+      <p id="four">&bull;&nbsp; &bull;</p>
+      <div class="right">
+      <p id="dice">
+
+      </p>
+      </div>
+  </div>
+ </div>
 </body>
 </html>
 <script>
 var dice = {
-  sides: 6,
+  sides: 7,
   roll: function () {
     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
     return randomNumber;
@@ -125,6 +234,37 @@ button.onclick = function() {
   var result = dice.roll();
   printNumber(result);
 };
+var diceRoolContent = [
+    '<p id="one">&bull;</p>',
+    '<p id="two">&bull; &nbsp; &bull;</p>',
+    '<p id="three">&bull; &bull; &bull;</p>',
+    '<p id="four">&bull;&nbsp; &bull;</p><p id="four">&bull;&nbsp; &bull;</p>',
+    '<p id="five">&bull;&nbsp; &bull;</p><p id="five" class="center">&bull;</p><p id="five">&bull;&nbsp; &bull;</p>',
+    '<p id="six">&bull;&nbsp; &bull;</p><p id="six">&bull;&nbsp; &bull;</p><p id="six">&bull;&nbsp; &bull;</p>'
+];
+
+
+function rollDice(){
+    var number = Math.floor((Math.random() * 6)); 
+    rollthedice(); 
+    console.log(number); 
+    var el = document.getElementById("dice"); 
+    el.innerHTML = diceRoolContent[number]; 
+}
+
+
+function rollthedice() {
+    for (var i = 0; i < 20; i++) {
+        var listOfNumbers = Math.floor((Math.random() * 6));
+
+
+        setTimeout( function(){
+            var element = document.getElementById("dice");
+            element.innerHTML = diceRoolContent[listOfNumbers];
+        }, (700)); 
+
+        }
+}
 
 
 </script>
