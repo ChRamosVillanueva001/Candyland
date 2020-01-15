@@ -11,7 +11,7 @@
     background-image:  url("29a5351a4fb6c6d4b43af271270431c6.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-    min-width: 1600px;
+    min-width: 1400px;
     min-height: 1000px;
   }
 
@@ -58,10 +58,10 @@ button {
   cursor: pointer;
 }
 #placeholder {
-  height: 100px;
-  width: 100px;
+  height: 350px;
+  width: 250px;
   padding: 50px;
-  margin: 50px auto;
+  margin: 15px auto 0;
   border: 1px solid gray;
   border-radius: 10px;  
   font-size:80px;
@@ -92,8 +92,7 @@ body{
 }
 
 button{
-    position: relative;
-    top: 100px;
+    margin-top: 15px;
     width: 200px;
     height: 50px;
     border-style: none;
@@ -106,7 +105,7 @@ button{
 
 div#dice{
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 50px;
     width: 300px;
     height: 300px;
     background-color: #fff;
@@ -176,42 +175,46 @@ div#dice{
     </div>
     </div>
     <div class="right">
-    <p id="placeholder">
+      <div class="cardwrapper">
+        <p id="placeholder">
     
-    </p>
-    <button id="button">Pick A Card</button>
+        </p>
+        <button id="button">Pick A Card</button>
+
+      </div>
+
+      <div class="dicewrapper">
+        
+        <div id="dice">
+            <p id="four">&bull;&nbsp; &bull;</p>
+            <p id="four">&bull;&nbsp; &bull;</p>
+            <div class="right">
+            <p id="dice">
+      
+            </p>
+            </div>
+        </div>
+        <button type="button" name="button" id="button" onclick="rollDice()">ROLL DICE</button>
+
+      </div>
     </div>
+
+    
+   </div>
+  
+
+
   </div>
   <!-- <script src="dice.js"></script>
   <script src="ui.js"></script> -->
   <!-- <img src= "29a5351a4fb6c6d4b43af271270431c6.jpg" alt="CandyLand" width="1600" height="1000"> -->
 
-</body>
-<head>
-  <meta charset="utf-8">
-  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-  <link rel="stylesheet" href="css/main.css">
-  <script src="js/script.js"></script>
-  <title>Dice</title>
-</head>
-<body>
-<div id="wrapper">
-  <button type="button" name="button" id="button" onclick="rollDice()">ROLL DICE</button>
-  <div id="dice">
-      <p id="four">&bull;&nbsp; &bull;</p>
-      <p id="four">&bull;&nbsp; &bull;</p>
-      <div class="right">
-      <p id="dice">
 
-      </p>
-      </div>
-  </div>
- </div>
-</body>
-</html>
+
+  
 <script>
 var dice = {
-  sides: 7,
+  sides: 13,
   roll: function () {
     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
     return randomNumber;
@@ -268,3 +271,6 @@ function rollthedice() {
 
 
 </script>
+
+</body>
+</html>
