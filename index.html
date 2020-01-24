@@ -58,8 +58,8 @@ button {
   cursor: pointer;
 }
 #placeholder {
-  height: 350px;
-  width: 250px;
+  height: 450px;
+  width: 275px;
   padding: 50px;
   margin: 15px auto 0;
   border: 1px solid gray;
@@ -160,6 +160,47 @@ div#dice{
     line-height: 50%;
 }
 
+#placeholder.doubleGreen {
+  background-image: url("greencard.png");
+}
+#placeholder.green {
+  background-image: url("greencard1.png");
+}
+#placeholder.doubleOrange {
+  background-image: url("orangecard.png");
+}
+#placeholder.orange {
+  background-image: url("orangecard1.png");
+}
+#placeholder.doublePurple {
+  background-image: url("purplecard.png");
+}
+#placeholder.purple {
+  background-image: url("purplecard1.png");
+}
+#placeholder.blue {
+  background-image: url("bluecard1.png");
+}
+#placeholder.doubleBlue {
+  background-image: url("bluecard.png");
+}
+#placeholder.yellow {
+  background-image: url("yellowcard1.png");
+}
+#placeholder.doubleYellow {
+  background-image: url("yellowcard.png");
+}
+#placeholder.red {
+  background-image: url("redcard1.png");
+}
+#placeholder.doubleRed {
+  background-image: url("redcard.png");
+}
+#placeholder.pink {
+  background-image: url("pinkcard1.png");
+}
+
+
 
   </style>
 
@@ -176,9 +217,9 @@ div#dice{
     </div>
     <div class="right">
       <div class="cardwrapper">
-        <p id="placeholder">
+        <div id="placeholder">
     
-        </p>
+        </div>
         <button id="button">Pick A Card</button>
 
       </div>
@@ -199,7 +240,7 @@ div#dice{
       </div>
     </div>
 
-    
+  
    </div>
   
 
@@ -208,16 +249,71 @@ div#dice{
   <!-- <script src="dice.js"></script>
   <script src="ui.js"></script> -->
   <!-- <img src= "29a5351a4fb6c6d4b43af271270431c6.jpg" alt="CandyLand" width="1600" height="1000"> -->
-
-
-
   
 <script>
+  let card;
 var dice = {
   sides: 13,
   roll: function () {
     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
-    return randomNumber;
+    switch(randomNumber) {
+      case 1:
+        card = "green";
+      break;
+
+      case 2:
+        card = "doubleGreen"
+      break;
+
+      case 3:
+        card = "red"
+      break;
+
+      case 4:
+        card = "doublered"
+      break;  
+
+      case 5:
+        card = "blue"
+      break;
+
+      case 6:
+        card = "doubleblue"
+      break;
+
+      case 7:
+        card = "orange"
+      break;
+
+      case 8:
+        card = "doubleorange"
+      break;
+
+      case 9:
+        card = "purple"
+      break;
+
+      case 10:
+        card = "doublepurple"
+      break;
+
+      case 11:
+        card = "yellow"
+      break;
+
+      case 12:
+        card = "doubleyellow"
+      break;
+
+      case 13:
+        card = "pink"
+      break;
+    }
+
+    let target = document.getElementById("placeholder");
+    target.setAttribute("class", card);
+
+
   }
 }
 
@@ -268,7 +364,6 @@ function rollthedice() {
 
         }
 }
-
 
 </script>
 
